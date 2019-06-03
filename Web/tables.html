@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script
+  		src="http://code.jquery.com/jquery-3.3.1.js"
+  		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  		crossorigin="anonymous">
+  	</script>
+
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+		crossorigin="anonymous">
+	</script>
+
+</head>
+<body>
+	
+	<nav class="nav navbar-default">		
+		<div class="container">
+
+			<div class="navbar-header">
+				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#zz01" aria-expanded="false">
+					<span class="sr-only">Toggke Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="#" class="navbar-brand">Koffee</a>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="zz01">
+				<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>	
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+<div class="container">
+		<div class="jumbotron">
+			<h1>Hello World</h1>
+			<p>This is example</p>
+			<p><a class="btn btn-success" href="#" role="button">Hi There</a></p>
+		</div>
+
+	<form>
+		<div class="form-group">
+			<label class="sr-only" for="ex1">Email</label>
+			<input id="ex1" type="email" class="form-control" name="email" placeholder="Email">
+		</div>
+
+		<div class="form-group">
+			<label for="ex2">Password</label>
+			<input id="ex2" type="password" class="form-control" name="password" placeholder="Password">
+		</div>
+
+		<div class="form-group">
+			<label for="ex3">File input</label>
+			<input id="ex3" type="file" name="file">
+			<p class="help-block">Help text here</p>
+		</div>
+
+		<div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		</div>
+
+		<button class="btn btn-default" type="Submit">Submit</button>
+	</form>
+
+	<form class="form-inline">
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-addon">$</div>
+				<label class="sr-only" id="ex0">Amount</label>
+				<input id="ex0" type="text" class="form-control" placeholder="Amount">
+				<div class="input-group-addon">.00</div>
+			</div>
+		</div>
+		<button class="btn btn-primary" type="submit">Transfer Cash</button>
+	</form>
+</div>
+
+
+</body>
+</html>

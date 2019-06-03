@@ -1,0 +1,6 @@
+Increasing Specificity:
+
+1.Star selectors.
+2.type selectors and pseudo elements.
+3.class selector and class selector and pseudo classes.
+4.id selector.

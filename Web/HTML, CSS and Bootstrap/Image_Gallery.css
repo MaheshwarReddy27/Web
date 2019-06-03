@@ -1,0 +1,23 @@
+body{
+	padding:70px;
+}
+
+.navbar-default{
+	background: #2c3e50;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color: #ecf0f1;
+	font-family: 'Sedgwick Ave', cursive;
+}
+
+.navbar-header .navbar-brand{
+	color: #ecf0f1;
+	font-family: 'Sedgwick Ave', cursive;
+}
+
+.jumbotron{
+	color: #2c3e50;
+	background:#ecf0f1;
+	font-family: 'Sedgwick Ave', cursive; 
+}
