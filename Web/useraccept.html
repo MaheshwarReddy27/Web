@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Create DB</title>
+
+	<style type="text/css">
+		fieldset{
+			width: 50%;
+			margin: auto;
+		}
+	</style>
+
+	<script type="text/javascript">
+		var dbObj =null;
+		function CreateDB()
+		{
+
+			var Database_Name ="MyDatabase";
+			var Version=1.0;
+			var Text_Description ="First Web SQL DB";
+			var Database_Size=2*1024*1024;
+
+			dbObj =openDatabase(Database_Name,Version,Text_Description,Database_Size,OnSuccessCreate());
+			alert(dbObj);
+			dbObj.transaction(function(tx){
+				tx.executeSql("Create Table if not exists Employee_Table(id unique,name,Location)");
+			});
+
+		}
+
+
+		function InsertDetails()
+		{
+			var id=document.getElementById('txt1').value;
+			var name=document.getElementById('txt2').value;
+			var location=document.getElementById('txt3').value;
+
+			dbObj.transaction(function(tx){
+	//				tx.executeSql('Insert into Employee_Table values(1,"ABC","GameOn")');
+	tx.executeSql('Insert into Employee_Table (id,name,Location) values(' +id+ ',"' +name+ '","'+location+ '")');
+});
+			alert(dbObj);
+		}
+
+		function ShowDetails(){
+		dbObj.transaction(function (tx) {
+			tx.executeSql('SELECT * FROM Employee_Table', [], function (tx, results)
+			{
+				var len = results.rows.length, i;
+				var str = '';
+				for (let i = 0; i < len; i++) 
+				{
+					str = "<tr><td>" + results.rows.item(i).id + "</td><td>" + results.rows.item(i).name + "</td><td>" + results.rows.item(i).location + "</td></tr>" ;
+					document.getElementById('tb').innerHTML += str;
+					str = '';
+				}
+			},null);
+		});
+}
+
+		function OnSuccessCreate(){
+			alert("DB Created");
+		}
+
+
+
+	</script>
+
+</head>
+
+
+<body onload="CreateDB()">
+
+	<fieldset align="center">
+		<legend><h1>Sign In</h1></legend>
+
+		<label for="eid">ID:</label>
+		<input type="number" id="txt1" placeholder="ID" required="true">
+
+
+		<label for="name">Name:</label>
+		<input type="text" id="txt2" placeholder="Name" required="true">
+
+
+		<label for="loc">Location:</label>
+		<input type="text" id="txt3" placeholder="Location" required="true">
+
+		<div>
+			<br>
+			<button onclick="InsertDetails()">Insert</button>
+			<button onclick="ShowDetails()">ShowDetails</button>
+		</div>
+
+	</fieldset>
+
+	<form>
+		<hr>
+		<h1>Employee Table Data</h1>
+		<table id="tb" border="2">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>Location</td>
+				</tr>
+			</thead>
+		</form>
+
+	</body>
+	</html>
