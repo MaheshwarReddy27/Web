@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Session Storage</title>
+	<script type="text/javascript">
+		function clickCounter(){
+			if (typeof(Storage)!=="undefined")
+			{
+				if (sessionStorage.clickcount) 
+				{
+					sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+					document.getElementById("result").innerHTML=sessionStorage.clickcount;
+
+				}
+				else{
+					sessionStorage.clickcount =1;
+				}
+			}
+			else
+			{
+				document.getElementById("result").innerHTML ="Sorry";	
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="result">abc</div>
+	<input type="button" name="" onclick="clickCounter()" value="Click">
+
+</body>
+</html>

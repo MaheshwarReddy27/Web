@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Session Storage</title>
+	<script type="text/javascript">
+		function clickCounter(){
+			if (typeof(Storage)!=="undefined")
+			{
+				localStorage.setItem("id","Manish");
+				document.getElementById("result").innerHTML=localStorage.getItem("id");
+			}
+			else
+			{
+				document.getElementById("result").innerHTML ="Sorry";	
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="result">abc</div>
+	<input type="button" name="" onclick="clickCounter()" value="Click">
+
+</body>
+</html>
