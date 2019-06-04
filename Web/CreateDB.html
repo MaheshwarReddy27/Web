@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create DB</title>
+	<script type="text/javascript">
+		function CreateDB()
+		{
+
+			var Database_Name ="MyDatabase";
+			var Version=1.0;
+			var Text_Description ="First Web SQL DB";
+			var Database_Size=2*1024*1024;
+
+			var dbObj =openDatabase(Database_Name,Version,Text_Description,Database_Size,OnSuccessCreate());
+
+			dbObj.transaction(function(tx){
+				tx.executeSql("Create Table if not exists Employee_Table(id unique,name,Location)");
+			});
+
+			dbObj.transaction(function(tx){
+				tx.executeSql('Insert into Employee_Table values(1,"ABC","GameOn")');
+			});
+		}
+
+		function OnSuccessCreate(){
+			alert("DB Created");
+		}
+	</script>
+</head>
+<body>
+<button id="btnCreatedb" onclick="CreateDB()">Create DB</button>
+
+</body>
+</html>
